@@ -1,0 +1,2 @@
+class InvalidBotToken(Exception):
+    pass
