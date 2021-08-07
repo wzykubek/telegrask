@@ -1,9 +1,10 @@
-from telegram.ext import Updater, CommandHandler, InlineQueryHandler, CallbackContext
+from telegram.ext import Updater, CommandHandler, MessageHandler, InlineQueryHandler, CallbackContext
 from telegram import ParseMode, Update
+from telegram.ext.filters import Filters
 from .exceptions import HelpPrasingError
 from .helpparser import HelpParser
 from .config import Config
-from typing import Union, Callable, Optional
+from typing import Union, Callable, Optional, Pattern
 
 
 class Telegrask:
@@ -33,6 +34,12 @@ class Telegrask:
                 self.help.add_command(command_name, help)
 
         return w
+
+    def message(self, filters: Filters) -> Callable:
+        return lambda f: self.dispatcher.add_handler(MessageHandler(filters, f))
+
+    def message_regex(self, regex: Pattern) -> Callable:
+        return lambda f: self.message(Filters.regex(regex))(f)
 
     def inline_query(self, f: Callable) -> None:
         self.dispatcher.add_handler(InlineQueryHandler(f))
