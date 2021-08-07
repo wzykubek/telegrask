@@ -32,6 +32,10 @@ class Telegrask:
         self.dispatcher = self.updater.dispatcher
         self.help = HelpParser()
 
+    def add_handler(self, handler) -> None:
+        """Simple wrapper method to add custom handlers to dispatcher."""
+        self.dispatcher.add_handler(handler)
+
     def command(
         self, commands: Union[str, list], help: Optional[str] = None
     ) -> Callable:
@@ -45,7 +49,7 @@ class Telegrask:
         """
 
         def w(f):
-            self.dispatcher.add_handler(CommandHandler(commands, f))
+            self.add_handler(CommandHandler(commands, f))
             command_name = commands[0] if type(commands) == list else commands
             if self.config["HELP_MESSAGE"]:
                 if help is None:
@@ -64,7 +68,7 @@ class Telegrask:
                 ...
         """
 
-        return lambda f: self.dispatcher.add_handler(MessageHandler(filters, f))
+        return lambda f: self.add_handler(MessageHandler(filters, f))
 
     def message_regex(self, regex: Pattern) -> Callable:
         """Wrapper decorator for `self.message` used for handle messages
@@ -89,7 +93,7 @@ class Telegrask:
                 ...
         """
 
-        self.dispatcher.add_handler(InlineQueryHandler(f))
+        self.add_handler(InlineQueryHandler(f))
 
     def __help_command(self, update: Update, context: CallbackContext) -> None:
         """Send help message with description of each command."""
