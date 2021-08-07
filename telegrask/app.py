@@ -1,6 +1,6 @@
 from telegram.ext import Updater, CommandHandler, InlineQueryHandler, CallbackContext
 from telegram import ParseMode, Update
-from .exceptions import InvalidBotToken, HelpPrasingError
+from .exceptions import HelpPrasingError
 from .helpparser import HelpParser
 from .config import Config
 from typing import Union, Callable, Optional
@@ -12,8 +12,6 @@ class Telegrask:
     default_config = Config({"HELP_MESSAGE": True})
 
     def __init__(self, token: str) -> None:
-        if not token:
-            raise InvalidBotToken("Token not specified")
         self.config = self.default_config
         self.updater = Updater(token, use_context=True)
         self.dispatcher = self.updater.dispatcher
