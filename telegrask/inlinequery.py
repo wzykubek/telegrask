@@ -3,6 +3,16 @@ from telegram import Update
 
 
 class InlineQuery:
+    """Class for inline query.
+
+    Usage
+    -----
+        @bot.inline_query
+        def inline(update, context):
+            query = InlineQuery(update, context)
+            ...
+    """
+
     def __init__(self, update: Update, context: CallbackContext) -> None:
         self.update = update
         self.context = context
@@ -12,10 +22,33 @@ class InlineQuery:
         self.answers = []
 
     def add_answer(self, inline_query_result) -> None:
+        """Add new answer to answers list.
+
+        Usage
+        -----
+            answer = telegram.InlineQueryResultArticle(...)  # or other InlineQueryResult* type
+            query.add_answer(answer)
+        """
+
         self.answers.append(inline_query_result)
 
     def clear_answers(self) -> None:
+        """Clear all answers.
+
+        Usage
+        -----
+            query.clear_answers()
+        """
+
         self.answers.clear()
 
     def send_answers(self) -> None:
+        """Send answers to user.
+
+        Usage
+        -----
+            # execute at the end of callback function
+            query.send_answers()
+        """
+
         self.context.bot.answer_inline_query(self.query_id, self.answers, cache_time=0)
