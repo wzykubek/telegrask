@@ -18,7 +18,7 @@ class Telegrask:
         self.help = HelpParser()
 
     def command(
-        self, commands: Union[str, list], description: Optional[str] = None
+        self, commands: Union[str, list], help: Optional[str] = None
     ) -> Callable:
         """Decorate command callback function. Add CommandHandler to dispatcher
         and command description for HelpParser.
@@ -28,9 +28,9 @@ class Telegrask:
             self.dispatcher.add_handler(CommandHandler(commands, f))
             command_name = commands[0] if type(commands) == list else commands
             if self.config["HELP_MESSAGE"]:
-                if description is None:
-                    raise HelpPrasingError("Description for command is not provided")
-                self.help.add_command(command_name, description)
+                if help is None:
+                    raise HelpPrasingError("Help for command is not provided")
+                self.help.add_command(command_name, help)
 
         return w
 
@@ -42,7 +42,7 @@ class Telegrask:
 
     def run(self, debug: bool = False) -> None:
         if self.config["HELP_MESSAGE"]:
-            self.command(["help", "start"], description="display this message")(
+            self.command(["help", "start"], help="display this message")(
                 self.__help_command
             )
 

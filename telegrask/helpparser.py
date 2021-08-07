@@ -4,8 +4,8 @@ class HelpParser:
         self.__final_message = self.__message
         self.__commands_descriptions = dict()
 
-    def add_command(self, name: str, description: str):
-        self.__commands_descriptions[name] = description
+    def add_command(self, name: str, help: str):
+        self.__commands_descriptions[name] = help
 
     @property
     def content(self):
