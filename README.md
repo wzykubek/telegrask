@@ -1,6 +1,14 @@
 # Telegrask
 
-Flask-inspired Telegram bot micro framework for Python.
+Flask-inspired Telegram bot micro framework for Python. 
+Main idea is to use callback function decorators and make bot 
+creating more intuitive for developer.
+
+## Installing
+
+```shell
+$ python3 -m pip install Telegrask
+```
 
 ## Simple "Hello World" bot example
 
@@ -18,6 +26,8 @@ def hello_command(update, context):
 if __name__ == "__main__":
     bot.run(debug=True)
 ```
+
+More examples in [examples](./examples) folder.
 
 ## Equivalent in pure [python-telegram-bot](https://python-telegram-bot.org/)
 
