@@ -9,6 +9,7 @@ from telegram import ParseMode, Update
 from telegram.ext.filters import Filters
 from .exceptions import HelpPrasingError
 from .helpparser import HelpParser
+from .inlinequery import InlineQuery
 from .config import Config
 from typing import Union, Callable, Optional, Pattern
 
@@ -89,11 +90,14 @@ class Telegrask:
         Usage
         -----
             @bot.inline_query
-            def callback_function(update, context):
+            def callback_function(query):
+                # update, context = query.update, query.context
                 ...
         """
 
-        self.add_handler(InlineQueryHandler(f))
+        # Handle Update and CallbackContext and pass instance of InlineQuery class
+        # as an argument for decorated function to avoid unnecessary code.
+        self.add_handler(InlineQueryHandler(lambda u, c: f(InlineQuery(u, c))))
 
     def __help_command(self, update: Update, context: CallbackContext) -> None:
         """Send help message with description of each command."""

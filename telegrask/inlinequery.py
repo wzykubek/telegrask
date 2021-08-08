@@ -8,8 +8,8 @@ class InlineQuery:
     Usage
     -----
         @bot.inline_query
-        def inline(update, context):
-            query = InlineQuery(update, context)
+        def inline(query):
+            # update, context = query.update, query.context
             ...
     """
 
