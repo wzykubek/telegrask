@@ -52,3 +52,15 @@ class InlineQuery:
         """
 
         self.context.bot.answer_inline_query(self.query_id, self.answers, cache_time=0)
+
+    def simple_return(self, inline_query_result) -> None:
+        """Add and send to user only one result.
+
+        Usage
+        -----
+            answer = telegram.InlineQueryResultArticle(...)  # or other InlineQueryResult* type
+            query.simple_return(answer)
+        """
+
+        self.add_answer(inline_query_result)
+        self.send_answers()
