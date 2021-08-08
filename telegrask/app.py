@@ -4,9 +4,9 @@ from telegram.ext import (
     MessageHandler,
     InlineQueryHandler,
     CallbackContext,
+    Filters
 )
 from telegram import ParseMode, Update
-from telegram.ext.filters import Filters
 from .exceptions import HelpPrasingError
 from .helpparser import HelpParser
 from .inlinequery import InlineQuery
@@ -38,7 +38,10 @@ class Telegrask:
         self.dispatcher.add_handler(handler)
 
     def command(
-        self, commands: Union[str, list], help: Optional[str] = None
+        self,
+        commands: Union[str, list],
+        help: Optional[str] = None,
+        allow_without_prefix: bool = False,
     ) -> Callable:
         """Decorator for command callback function.
 
@@ -56,6 +59,9 @@ class Telegrask:
                 if help is None:
                     raise HelpPrasingError("Help for command is not provided")
                 self.help.add_command(command_name, help)
+            
+            if allow_without_prefix:
+                self.message(Filters.text & ~Filters.command)(f)
 
         return w
 
