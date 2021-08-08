@@ -90,7 +90,7 @@ class Telegrask:
         Usage
         -----
             @bot.inline_query
-            def callback_function(query):
+            def callback_function(query: telegrask.InlineQuery):
                 # update, context = query.update, query.context
                 ...
         """

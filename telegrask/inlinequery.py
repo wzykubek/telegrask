@@ -8,7 +8,7 @@ class InlineQuery:
     Usage
     -----
         @bot.inline_query
-        def inline(query):
+        def inline(query: telegrask.InlineQuery):
             # update, context = query.update, query.context
             ...
     """
@@ -28,6 +28,9 @@ class InlineQuery:
         -----
             answer = telegram.InlineQueryResultArticle(...)  # or other InlineQueryResult* type
             query.add_answer(answer)
+            ...
+            # after all you need to send all added results to user
+            query.send_answers()
         """
 
         self.answers.append(inline_query_result)
