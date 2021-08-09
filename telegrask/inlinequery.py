@@ -1,5 +1,6 @@
 from telegram.ext import CallbackContext
 from telegram import Update
+from uuid import uuid4
 
 
 class InlineQuery:
@@ -73,3 +74,7 @@ class InlineQuery:
         if len(desc) > 30:
             desc = str(desc[:32] + (desc[29:] and "..."))
         return desc 
+
+    @staticmethod
+    def get_random_id() -> str:
+        return str(uuid4())

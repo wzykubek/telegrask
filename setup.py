@@ -10,7 +10,7 @@ source_url = "https://github.com/samedamci/telegrask"
 
 setup(
     name="Telegrask",
-    version="0.1.1",
+    version="0.1.2",
     description="Flask-inspired Telegram bot micro framework for Python.",
     long_description=long_description,
     long_description_content_type="text/markdown",
