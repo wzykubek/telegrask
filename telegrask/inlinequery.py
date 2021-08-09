@@ -67,3 +67,9 @@ class InlineQuery:
 
         self.add_answer(inline_query_result)
         self.send_answers()
+
+    @staticmethod
+    def parse_description(desc: str) -> str:
+        if len(desc) > 30:
+            desc = str(desc[:32] + (desc[29:] and "..."))
+        return desc 
