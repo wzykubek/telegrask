@@ -3,4 +3,4 @@ __pycache__/
 .vscode/
 *.egg-info/
 dist/
-build.sh
+*.lock
