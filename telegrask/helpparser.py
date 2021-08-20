@@ -1,7 +1,7 @@
 class HelpParser:
     """Parser of help message often sended by /help or /start command."""
 
-    def __init__(self, inline: bool = False) -> None:
+    def __init__(self) -> None:
         self.__message = "*Available commands*\n\n"
         self.commands_descriptions = dict()
 
