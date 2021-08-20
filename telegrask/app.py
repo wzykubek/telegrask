@@ -4,7 +4,7 @@ from telegram.ext import (
     MessageHandler,
     InlineQueryHandler,
     CallbackContext,
-    Filters
+    Filters,
 )
 from telegram import ParseMode, Update
 from .exceptions import HelpPrasingError
@@ -59,7 +59,7 @@ class Telegrask:
                 if help is None:
                     raise HelpPrasingError("Help for command is not provided")
                 self.help.add_command(command_name, help)
-            
+
             if allow_without_prefix:
                 self.message(Filters.text & ~Filters.command)(f)
 
@@ -151,7 +151,7 @@ class Telegrask:
             logging.basicConfig(
                 format="%(levelname)s - %(message)s", level=logging.DEBUG
             )
-            logger = logging.getLogger(__name__)
+            logging.getLogger(__name__)
 
         self.updater.start_polling()
         self.updater.idle()

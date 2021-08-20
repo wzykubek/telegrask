@@ -73,7 +73,7 @@ class InlineQuery:
     def parse_description(desc: str) -> str:
         if len(desc) > 30:
             desc = str(desc[:32] + (desc[29:] and "..."))
-        return desc 
+        return desc
 
     @staticmethod
     def get_random_id() -> str:

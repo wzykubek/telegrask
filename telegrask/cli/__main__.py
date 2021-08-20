@@ -2,9 +2,7 @@ import argparse
 from . import ProjectInitializer
 
 parser = argparse.ArgumentParser(
-    prog="telegrask",
-    description="CLI for Telegrask framework.",
-    allow_abbrev=False,
+    prog="telegrask", description="CLI for Telegrask framework.", allow_abbrev=False,
 )
 subparsers = parser.add_subparsers(dest="command", required=True)
 
