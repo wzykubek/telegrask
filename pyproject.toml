@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "Telegrask"
-version = "0.3.3"
+version = "0.3.4"
 description = "Flask-inspired Telegram bot micro framework for Python."
 authors = ["samedamci <samedamci@disroot.org>"]
 license = "ISC"
