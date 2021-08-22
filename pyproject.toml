@@ -1,12 +1,13 @@
 [tool.poetry]
 name = "Telegrask"
-version = "0.3.4"
+version = "0.3.5"
 description = "Flask-inspired Telegram bot micro framework for Python."
 authors = ["samedamci <samedamci@disroot.org>"]
 license = "ISC"
 readme = "README.md"
 homepage = "https://github.com/samedamci/telegrask"
 repository = "https://github.com/samedamci/telegrask"
+documentation = "http://telegrask.rtfd.io/"
 keywords = ["flask-like", "framework", "library", "telegram", "bot"]
 classifiers = [
     "Development Status :: 4 - Beta",
