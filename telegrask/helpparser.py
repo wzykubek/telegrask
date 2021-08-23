@@ -2,7 +2,7 @@ class HelpParser:
     """Parser of help message often sended by /help or /start command."""
 
     def __init__(self) -> None:
-        self.__message = "*Available commands*\n\n"
+        self.header = "Available commands"
         self.commands_descriptions = dict()
 
     def add_command(self, name: str, help: str) -> None:
@@ -10,7 +10,7 @@ class HelpParser:
 
     @property
     def content(self) -> str:
-        final_message = self.__message
+        final_message = f"*{self.header}*\n\n"
         for cmd, desc in self.commands_descriptions.items():
             final_message += f"/{cmd}\n{desc}\n\n"
         return final_message
