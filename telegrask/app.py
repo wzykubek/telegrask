@@ -141,9 +141,7 @@ class Telegrask:
         """
 
         if self.config["HELP_MESSAGE"]:
-            self.command(["help", "start"], help="display this message")(
-                self.__help_command
-            )
+            self.add_handler(CommandHandler(["help", "start"], self.__help_command))
 
         if debug:
             import logging
