@@ -20,4 +20,14 @@ User's Guide
 
    getting-started
    usage-basics
+
+
+Main Class
+----------
+
+.. toctree::
+   :maxdepth: 2
+
    handlers-decorators
+   .. config
+   help-parser
