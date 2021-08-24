@@ -22,12 +22,23 @@ User's Guide
    usage-basics
 
 
-Main Class
-----------
+Main Framework
+--------------
 
 .. toctree::
    :maxdepth: 2
 
    handlers-decorators
-   .. config
    help-parser
+
+* Adding Custom Handlers
+* Configuration
+* Running
+
+
+Extensions
+----------
+
+* Chat
+* Moderation
+* UserURL
