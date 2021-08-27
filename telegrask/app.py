@@ -39,7 +39,7 @@ class Telegrask:
 
     def command(
         self,
-        commands: Union[str, list],
+        command: Union[str, list],
         help: Optional[str] = None,
         allow_without_prefix: bool = False,
     ) -> Callable:
@@ -53,8 +53,8 @@ class Telegrask:
         """
 
         def w(f):
-            self.add_handler(CommandHandler(commands, f))
-            command_name = commands[0] if type(commands) == list else commands
+            self.add_handler(CommandHandler(command, f))
+            command_name = command[0] if type(command) == list else command
             if self.config["HELP_MESSAGE"]:
                 if help is None:
                     raise HelpPrasingError("Help for command is not provided")
