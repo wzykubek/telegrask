@@ -102,12 +102,31 @@ class Telegrask:
             def callback_function(update, context):
                 ...
         """
+
         self.add_handler(ChatMemberHandler(f))
 
     def poll_answer(self, f: Callable) -> None:
+        """Decorator for updates that contain a poll answer.
+
+        Usage
+        -----
+            @bot.poll_answer
+            def callback_function(update, context):
+                ...
+        """
+
         self.add_handler(PollAnswerHandler(f))
 
     def poll(self, f: Callable) -> None:
+        """Decorator for updates that contain a poll.
+
+        Usage
+        -----
+            @bot.poll
+            def callback_function(update, context):
+                ...
+        """
+
         self.add_handler(PollHandler(f))
 
     def inline_query(self, f: Callable) -> None:

@@ -72,6 +72,29 @@ Handler for updates that contain a chat member update.
         pass
 
 
+@poll
+-----
+
+Handler for updates that contain a poll.
+
+.. code-block:: python
+
+    @bot.poll
+    def callback_function(update: Update, context: CallbackContext):
+        pass
+
+
+@poll_answer
+------------
+Handler for updates that contain a poll answers.
+
+.. code-block:: python
+
+    @bot.poll
+    def callback_function(update: Update, context: CallbackContext):
+        pass
+
+
 @inline_query
 -------------
 
