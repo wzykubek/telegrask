@@ -25,7 +25,7 @@ classifiers = [
     "Topic :: Software Development :: Libraries :: Application Frameworks",
     "Typing :: Typed",
 ]
-include = ["LICENSE", "telegrask/cli/templates/.gitignore"]
+include = ["telegrask/cli/templates/.gitignore"]
 
 [tool.poetry.dependencies]
 python = "^3.6.2,<4.0"
