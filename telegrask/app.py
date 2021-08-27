@@ -3,6 +3,8 @@ from telegram.ext import (
     CommandHandler,
     MessageHandler,
     ChatMemberHandler,
+    PollAnswerHandler,
+    PollHandler,
     InlineQueryHandler,
     CallbackContext,
     Filters,
@@ -101,6 +103,12 @@ class Telegrask:
                 ...
         """
         self.add_handler(ChatMemberHandler(f))
+
+    def poll_answer(self, f: Callable) -> None:
+        self.add_handler(PollAnswerHandler(f))
+
+    def poll(self, f: Callable) -> None:
+        self.add_handler(PollHandler(f))
 
     def inline_query(self, f: Callable) -> None:
         """Decorator for inline query callback function.
