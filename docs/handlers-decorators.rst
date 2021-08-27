@@ -59,6 +59,19 @@ Parameters:
     * ``regex: Pattern`` - regular expression to filter a message or just text
 
 
+
+@chat_member
+------------
+
+Handler for updates that contain a chat member update.
+
+.. code-block:: python
+
+    @bot.chat_member
+    def callback_function(update: Update, context: CallbackContext):
+        pass
+
+
 @inline_query
 -------------
 
