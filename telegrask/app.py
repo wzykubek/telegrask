@@ -2,6 +2,7 @@ from telegram.ext import (
     Updater,
     CommandHandler,
     MessageHandler,
+    ChatMemberHandler,
     InlineQueryHandler,
     CallbackContext,
     Filters,
@@ -89,6 +90,17 @@ class Telegrask:
         """
 
         return lambda f: self.message(Filters.regex(regex))(f)
+
+    def chat_member(self, f: Callable) -> None:
+        """Decorator for updates that contain a chat member update.
+
+        Usage
+        -----
+            @bot.chat_member
+            def callback_function(update, context):
+                ...
+        """
+        self.add_handler(ChatMemberHandler(f))
 
     def inline_query(self, f: Callable) -> None:
         """Decorator for inline query callback function.
