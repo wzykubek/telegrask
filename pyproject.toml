@@ -36,6 +36,7 @@ Sphinx = { version = "^4.1.2", optional = true }
 rinohtype = "^0.5.3"
 black = "^21.7b0"
 flake8 = "^3.9.2"
+flake8-bugbear = "^21.4.3"
 
 [tool.poetry.scripts]
 telegrask = "telegrask.cli:main"
