@@ -1,11 +1,14 @@
 import argparse
 from .projectinitializer import ProjectInitializer
+from telegrask import __version__
 
 parser = argparse.ArgumentParser(
     prog="telegrask",
     description="CLI for Telegrask framework.",
     allow_abbrev=False,
 )
+parser.add_argument("-V", "--version", action="version", version=f"v{__version__}")
+
 subparsers = parser.add_subparsers(dest="command", required=True)
 
 parser_init = subparsers.add_parser("init", help="initialize project")
