@@ -5,3 +5,4 @@ __pycache__/
 dist/
 testbot.py
 docs/_build/
+.env
