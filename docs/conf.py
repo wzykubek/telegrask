@@ -1,3 +1,5 @@
+from telegrask import __version__
+
 # Configuration file for the Sphinx documentation builder.
 #
 # This file only contains a selection of the most common options. For a full
@@ -22,7 +24,7 @@ copyright = "2021, samedamci"
 author = "samedamci"
 
 # The full version, including alpha/beta/rc tags
-release = "0.3.9"
+release = __version__
 
 
 # -- General configuration ---------------------------------------------------

@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "Telegrask"
-version = "0.3.9"
+version = "0.0.0"
 description = "Flask-inspired Telegram bot micro framework for Python."
 authors = ["samedamci <samedamci@disroot.org>"]
 license = "ISC"
@@ -40,5 +40,14 @@ black = "^21.7b0"
 telegrask = "telegrask.cli:main"
 
 [build-system]
-requires = ["poetry_core>=1.0.0"]
+requires = ["poetry_core>=1.0.0", "poetry-dynamic-versioning"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry-dynamic-versioning]
+enable = true
+vcs = "git"
+style = "semver"
+format = "{base}"
+
+[tool.poetry-dynamic-versioning.substitution]
+files = ["*/__version__.py"]
