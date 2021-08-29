@@ -10,7 +10,7 @@ class UserURL:
         # example
         user = update.message["reply_to_message"].from_user
         update.message.reply_text(
-            f'User {UserURL(user)} has been muted.', 
+            f'User {UserURL(user)} has been muted.',
             parse_mode="markdown"
         )
         ...

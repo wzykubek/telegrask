@@ -27,7 +27,8 @@ class InlineQuery:
 
         Usage
         -----
-            answer = telegram.InlineQueryResultArticle(...)  # or other InlineQueryResult* type
+            answer = telegram.InlineQueryResultArticle(...)
+                              # or other InlineQueryResult* type
             query.add_answer(answer)
             ...
             # after all you need to send all added results to user
@@ -62,7 +63,8 @@ class InlineQuery:
 
         Usage
         -----
-            answer = telegram.InlineQueryResultArticle(...)  # or other InlineQueryResult* type
+            answer = telegram.InlineQueryResultArticle(...)
+                              # or other InlineQueryResult* type
             query.simple_return(answer)
         """
 

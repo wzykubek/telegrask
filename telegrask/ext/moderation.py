@@ -1,7 +1,7 @@
 from telegram import Update, ChatPermissions
 from telegram.ext import CallbackContext
 from .chat import Chat
-from typing import Optional, Union
+from typing import Union
 from datetime import datetime
 
 
