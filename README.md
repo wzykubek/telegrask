@@ -1,10 +1,11 @@
 # Telegrask
 
-![status](https://img.shields.io/pypi/status/telegrask?style=flat-square)
+[![actions-Lint](https://img.shields.io/github/workflow/status/samedamci/telegrask/Lint?label=Lint&logo=GitHub&style=flat-square)](https://github.com/samedamci/telegrask/actions/workflows/lint.yml)
+[![docs](https://readthedocs.org/projects/telegrask/badge/?version=stable&style=flat-square)](https://telegrask.rtfd.io)
+[![status](https://img.shields.io/pypi/status/telegrask?style=flat-square)](https://pypi.org/project/Telegrask)
 [![package version](https://img.shields.io/pypi/v/telegrask?style=flat-square)](https://pypi.org/project/Telegrask)
 [![downloads](https://img.shields.io/pypi/dd/telegrask?style=flat-square)](https://pypi.org/project/Telegrask)
 [![license](https://img.shields.io/github/license/samedamci/telegrask?style=flat-square)](https://github.com/samedamci/telegrask/blob/master/LICENSE)
-[![docs](https://readthedocs.org/projects/telegrask/badge/?version=stable&style=flat-square)](https://telegrask.rtfd.io)
 [![code style](https://img.shields.io/badge/code%20style-black-000000.svg?style=flat-square)](https://github.com/psf/black)
 
 ---
