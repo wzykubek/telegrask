@@ -32,7 +32,7 @@ class Moderation(Chat):
 
         if not self.is_user_admin(user_id):
             self.context.bot.restrict_chat_member(
-                self.chat_id, user_id, permissions=permissions, until_date=until_date,
+                self.chat_id, user_id, permissions=permissions, until_date=until_date
             )
         else:
             raise PermissionError("Cannot change chat admin permissions")
