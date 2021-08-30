@@ -1,5 +1,5 @@
 [flake8]
-exclude = ".venv/*, */templates/*"
+exclude = .venv/*,*/templates/*
 max-line-length = 88
 extend-ignore = E203,E501,E722
 select = C,E,F,W,B,B902,B950
