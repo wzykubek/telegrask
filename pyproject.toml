@@ -14,9 +14,6 @@ classifiers = [
     "License :: OSI Approved :: ISC License (ISCL)",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.6",
-    "Programming Language :: Python :: 3.7",
-    "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: Implementation :: CPython",
     "Programming Language :: Python :: Implementation :: PyPy",
@@ -28,7 +25,7 @@ classifiers = [
 include = ["telegrask/cli/templates/.gitignore"]
 
 [tool.poetry.dependencies]
-python = "^3.6.2,<4.0"
+python = "^3.9.2,<4.0"
 python-telegram-bot = "^13.7"
 Sphinx = { version = "^4.1.2", optional = true }
 
